@@ -2,7 +2,7 @@
   <div class="top-search-icon">
     <fa-icon [icon]="faSearch"></fa-icon>
   </div>
-  <input type="search" placeholder="Search for keywords, phrases, etc." (click)="closeSearch = 0">
+  <input type="search" placeholder="Search for keywords, phrases, etc." #input (click)="closeSearch = 0" (keyup.enter)="enterSubmit(input)">
 </div>
 <div class="top-search-advance" *ngIf="closeSearch ==0">
   <div class="top-search-close">
@@ -13,7 +13,7 @@
   <div class="top-search-btn">
     <div class="dropdown">
       <div class="dropdown-btn">
-        <button type="button" class="">
+        <button type="button" class="" (click)="submit(input.value)">
           <span class="btn-label">Submit</span>
           <span class="btn-icon btn-icon-left">
             <fa-icon [icon]="faEllipsisH"></fa-icon>
