@@ -1,3 +1,33 @@
 :host {
-  flex: 1;
+    flex: 1;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+nav {
+    margin-top: 17px;
+    .sub-level-middle {
+        display: flex;
+        li {
+            a {
+                color: var(--dark-green-text);
+                font-size: 11px;
+                margin: 0px 9px;
+                span {
+                    width: 8px;
+                    height: 16px;
+                    font-size: 16px;
+                    margin: 0px 8px;
+                    line-height: 15px;
+                }
+            }
+            .active {
+                color: white;
+            }
+        }
+    }
 }

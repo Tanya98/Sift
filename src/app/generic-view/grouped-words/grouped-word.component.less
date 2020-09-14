@@ -1,0 +1,33 @@
+.words-container {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    max-width: 780px;
+    row-gap: 18px;
+    margin-top: 33px;
+    column-gap: 15px;
+}
+
+.word-block {
+    color: var(--text-color);
+    height: 48px;
+    text-align: left;
+    padding: 0px 15px;
+    background-color: var(--colors-bg);
+    span {
+        line-height: 48px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+
+.green {
+    background-color: var(--risk-1);
+}
+
+.gray {
+    background-color: var(--risk-2);
+}
+
+.orange {
+    background-color: var(--risk-5);
+}

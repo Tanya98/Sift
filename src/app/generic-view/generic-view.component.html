@@ -1,15 +1,35 @@
 <section id="generic-view">
 
-  <header>
+  <header class="main">
 
-    <h3>Generic View</h3>
-
-    <nav class="breadcrumb">
-      <xng-breadcrumb></xng-breadcrumb>
-    </nav>
+    <h3 class="subtitle">Diagnose</h3>
+      <nav>
+        <ul class="sub-level-middle">
+          <li>
+            <a>
+              <span class="btn-icon"><fa-icon [icon]="faAngleRight"></fa-icon></span>
+              <ng-container i18n>Filter Quality</ng-container>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="btn-icon"><fa-icon [icon]="faAngleRight"></fa-icon></span>
+              <ng-container i18n>Audit Rules</ng-container>
+            </a>
+          </li>
+          <li>
+            <a class="active">
+              <span class="btn-icon"><fa-icon [icon]="faAngleRight"></fa-icon></span>
+              <ng-container i18n>Diagnoose</ng-container>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
   </header>
 
-  <p>Add your view logic here</p>
-
+  <ng-container *ngIf="(responseData$ | async) as data">
+      <app-grouped-word [data]="data"></app-grouped-word>
+  </ng-container>
+  
 </section>

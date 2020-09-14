@@ -1,0 +1,19 @@
+<div class="words-container">
+  <ng-container *ngFor="let word of groupedWords">
+    <div *ngIf="isArray(word); else item" class="word-block">
+      <span>{{word.join(' ')}}</span>
+    </div>
+    <ng-template #item>
+      <div class="word-block">
+        <span>{{word}}</span>
+      </div>
+    </ng-template>
+
+  </ng-container>
+    <ng-container *ngFor="let word of originalGroupedWords">
+      <div class="word-block" 
+      [ngClass]="{'green': word.topics[0] === risk.Green, 'gray': word.topics[0] === risk.Gray, 'orange': word.topics[0] === risk.Orange}">
+        <span>{{word.text}}</span>
+      </div>
+    </ng-container>
+</div>
