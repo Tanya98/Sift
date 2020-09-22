@@ -1,0 +1,23 @@
+<div class="widget-container">
+  <div class="widget-block">
+    <p>{{data.text}}</p>
+    <div class="widget-button-block">
+      <app-refresh-button></app-refresh-button>
+      <app-remove-button></app-remove-button>
+      <app-more-button></app-more-button>
+    </div>
+  </div>
+
+  <span>{{'Topics'}}</span>
+  <div *ngFor="let key of Object.keys(data.topics)">
+    <div [ngSwitch]="converToNumber(key)">
+      <div *ngSwitchCase="topics.GeneralRisk">
+        <app-topic-block [icon]="faComments" [levelOfRisk]="key" [text]="generalRisk" [risk]="data.topics[key]"></app-topic-block>
+      </div>
+      <div *ngSwitchCase="topics.Vulgar">
+        <app-topic-block [icon]="faAngry" [levelOfRisk]="key" [text]="vulgarRisk" [risk]="data.topics[key]"></app-topic-block>
+      </div>
+      <div *ngSwitchDefault></div>
+    </div>
+  </div>
+</div>
