@@ -1,35 +1,44 @@
 <section id="generic-view">
 
-  <header class="main">
+  <header>
 
     <h3 class="subtitle">Diagnose</h3>
-      <nav>
-        <ul class="sub-level-middle">
-          <li>
-            <a>
-              <span class="btn-icon"><fa-icon [icon]="faAngleRight"></fa-icon></span>
-              <ng-container i18n>Filter Quality</ng-container>
-            </a>
-          </li>
-          <li>
-            <a>
-              <span class="btn-icon"><fa-icon [icon]="faAngleRight"></fa-icon></span>
-              <ng-container i18n>Audit Rules</ng-container>
-            </a>
-          </li>
-          <li>
-            <a class="active">
-              <span class="btn-icon"><fa-icon [icon]="faAngleRight"></fa-icon></span>
-              <ng-container i18n>Diagnoose</ng-container>
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <nav>
+      <ul class="sub-level-middle">
+        <li>
+          <a>
+            <span class="btn-icon">
+              <fa-icon [icon]="faAngleRight"></fa-icon>
+            </span>
+            <ng-container i18n>Filter Quality</ng-container>
+          </a>
+        </li>
+        <li>
+          <a>
+            <span class="btn-icon">
+              <fa-icon [icon]="faAngleRight"></fa-icon>
+            </span>
+            <ng-container i18n>Audit Rules</ng-container>
+          </a>
+        </li>
+        <li>
+          <a class="active">
+            <span class="btn-icon">
+              <fa-icon [icon]="faAngleRight"></fa-icon>
+            </span>
+            <ng-container i18n>Diagnoose</ng-container>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
   </header>
 
   <ng-container *ngIf="(responseData$ | async) as data">
+    <div class="container">
       <app-grouped-word [data]="data"></app-grouped-word>
+      <app-words-risk-widget [data]="data"></app-words-risk-widget>
+    </div>
   </ng-container>
-  
+
 </section>
