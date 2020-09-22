@@ -8,12 +8,20 @@
         <span>{{word}}</span>
       </div>
     </ng-template>
-
   </ng-container>
-    <ng-container *ngFor="let word of originalGroupedWords">
-      <div class="word-block" 
-      [ngClass]="{'green': word.topics[0] === risk.Green, 'gray': word.topics[0] === risk.Gray, 'orange': word.topics[0] === risk.Orange}">
+
+  <ng-container *ngFor="let word of originalGroupedWords">
+    <div *ngIf="word.simplyfied; else menu" class="word-block"
+      [ngClass]="{'green': word.topics[0] === colorsRisk.Green, 'gray': word.topics[0] === colorsRisk.Gray, 'orange': word.topics[0] === colorsRisk.Orange}">
+      <span>{{word.text}}</span>
+    </div>
+
+    <ng-template #menu>
+      <div class="word-block"
+        [ngClass]="{'green': word.topics[0] === colorsRisk.Green, 'gray': word.topics[0] === colorsRisk.Gray, 'orange': word.topics[0] === colorsRisk.Orange}">
         <span>{{word.text}}</span>
+        <app-grouped-words-menu [data]="word.solutions"></app-grouped-words-menu>
       </div>
-    </ng-container>
+    </ng-template>
+  </ng-container>
 </div>
