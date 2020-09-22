@@ -9,6 +9,10 @@ import { LoadingIndicatorComponent } from './loading-indicator/loading-indicator
 import { MoreButtonComponent } from './more-button/more-button.component';
 import { OptionButtonGroupComponent } from './option-button-group/option-button-group.component';
 import { ThemeModule, lightTheme, darkTheme } from '../theme';
+import { RefreshButtonComponent } from './refresh-button/refresh-button.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RemoveButtonComponent } from './remove-button/remove-button.component';
+import { TopicBlockComponent } from './topic-block/topic-block.component';
 
 
 @NgModule({
@@ -18,11 +22,15 @@ import { ThemeModule, lightTheme, darkTheme } from '../theme';
     LoadingIndicatorComponent,
     MoreButtonComponent,
     OptionButtonGroupComponent,
+    RefreshButtonComponent,
+    RemoveButtonComponent,
+    TopicBlockComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule,
+    FontAwesomeModule,
     ThemeModule.forRoot({
       themes: [lightTheme, darkTheme],
       active: 'dark'
@@ -34,6 +42,9 @@ import { ThemeModule, lightTheme, darkTheme } from '../theme';
     LoadingIndicatorComponent,
     MoreButtonComponent,
     OptionButtonGroupComponent,
+    RefreshButtonComponent,
+    RemoveButtonComponent,
+    TopicBlockComponent
   ]
 })
 export class SharedComponentsModule { }
